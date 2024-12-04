@@ -51,6 +51,7 @@ public class UserServiceImp implements UserService {
 
     @Override
     public void add(User user) {
+
         list.add(user);
     }
 

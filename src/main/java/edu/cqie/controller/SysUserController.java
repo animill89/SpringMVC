@@ -26,6 +26,8 @@ public class SysUserController {
     @ResponseBody
     public Result add(@RequestBody User user){
         userService.add(user);
+//        System.out.println(user.getUserId());
+//        model.addAttribute("list",userService.list());
         return  Result.ok();
     }
 
@@ -45,6 +47,13 @@ public class SysUserController {
         return  Result.ok();
     }
 
+    @GetMapping("/delete")
+    @ResponseBody
+    public Result deleteUser(@RequestParam("name") String username){
+        userService.deleteUser(username);
+        return  Result.ok();
+    }
+
     //批量删除
     @PostMapping("/remove")
     @ResponseBody
@@ -56,7 +65,7 @@ public class SysUserController {
     //获取详情
     @PostMapping("/get/{id}")
     @ResponseBody
-    public Result get(@RequestParam Long id){
+    public Result get(@RequestParam("id") Long id){
         userService.get(id);
         return  Result.ok();
     }

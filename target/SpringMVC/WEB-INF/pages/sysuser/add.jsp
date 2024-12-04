@@ -52,6 +52,7 @@
 
     function add(){
         let data={
+            // "userId":"1",
             "name":document.getElementById("name").value,
             "sex":getValue(),
             "email":document.getElementById("email").value,

@@ -73,11 +73,37 @@
         //3、页面渲染
 
     }
+    //删除功能
 
+    // function deleteUser(name){
+    //     if (window.confirm("确定删除吗?")){
+    //         console.log(name);
+    //         //1、调用fetch方法从后台调用数据发送前台
+    //         let url="/user/delete";
+    //
+    //         fetch(url,{
+    //             method:"get",
+    //             // headers
+    //         }).then(response=>{
+    //             return response.json();
+    //         }).then(data=>{
+    //             if(data&&data.code=='0'){
+    //                 init();
+    //             }else{
+    //                 alert(data.msg);
+    //             }
+    //         }).catch(err=>{
+    //             alert("请求出错");
+    //         })
+    //     }
+    //
+    // }
     function remove(id){
         if (window.confirm("确定删除吗?")){
+            console.log(id);
             //1、调用fetch方法从后台调用数据发送前台
             let url="/user/remove/"+id;
+
             fetch(url,{
                 method:"get",
                 // headers
@@ -90,7 +116,7 @@
                     alert(data.msg);
                 }
             }).catch(err=>{
-                alert(err);
+                alert("请求出错");
             })
         }
 
@@ -142,7 +168,7 @@
                     strHtml+="<tr>"
                     strHtml+="<td>"
                     strHtml+='<a href="/user/toEditPage/'+item.userId+'" class="button-default">修改</a>'
-                    strHtml+='<a href="javascript:void(0);" class="button-default" onclick="removes('+item.userId+')">删除</a>'
+                    strHtml+='<a href="javascript:void(0);" class="button-default" onclick="remove('+item.userId+')">删除</a>'
                     strHtml+="</td>"
                     strHtml+="</tr>"
                 })
