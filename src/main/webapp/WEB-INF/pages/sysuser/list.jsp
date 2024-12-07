@@ -103,7 +103,6 @@
             console.log(id);
             //1、调用fetch方法从后台调用数据发送前台
             let url="/user/remove/"+id;
-
             fetch(url,{
                 method:"get",
                 // headers
